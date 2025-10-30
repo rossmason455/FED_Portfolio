@@ -1,3 +1,6 @@
+
+
+
 export default function CountryCard({flagImg, name, capital}){
     return (
         <>
