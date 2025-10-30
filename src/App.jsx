@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 // pages
 import Home from './pages/Home';
 import About from './pages/About';
-import Contact from './pages/Regions'
+import Regions from './pages/Regions'
 import PageNotFound from './pages/PageNotFound';
 import SingleCountry from './pages/SingleCountry';
 
@@ -17,7 +17,7 @@ export default function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
-        <Route path='/contact' element={<Contact />} />
+        <Route path='/contact' element={<Regions />} />
 
         {/* Example concepts covered in class, not needed in the portfolio */}
         <Route path='/country/:name' element={<SingleCountry />} />
