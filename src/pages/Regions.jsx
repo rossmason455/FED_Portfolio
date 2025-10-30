@@ -39,7 +39,7 @@ export default function Regions(){
             .catch(error => console.log(error));}, []);
     
     
-            const regionCards = regionsList.map(region => (
+        const regionCards = regionsList.map(region => (
         <Link
             key={region.regionName}
             to={`/region/${region.regionName}`}
