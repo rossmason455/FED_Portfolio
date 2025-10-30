@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
 import Regions from './pages/Regions'
+import RegionCountries from './pages/RegionCountries'
 import PageNotFound from './pages/PageNotFound';
 import SingleCountry from './pages/SingleCountry';
 
