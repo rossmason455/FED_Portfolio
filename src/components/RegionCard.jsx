@@ -1,4 +1,4 @@
-export default function RegionCard(){
+export default function RegionCard({ regionName, regionImg }){
     return (
         <>
            
