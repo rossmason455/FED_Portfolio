@@ -23,4 +23,23 @@ export default function Subregions() {
       })
       .catch((error) => console.error(error));
   }, []);
+
+
+  const subregionCards = subregionsList.map((subregion) => (
+    <Link
+      key={subregion.subregionName}
+      to={`/subregion/${subregion.subregionName}`}
+      className="no-underline"
+    >
+      <SubregionCard subregionName={subregion.subregionName} />
+    </Link>
+  ));
+
+   return (
+    <div>
+       <h1>SubRegions</h1>
+            {subregionCards}
+      </div>
+    
+  );
 }
