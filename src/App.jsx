@@ -20,6 +20,7 @@ export default function App() {
         <Route path='/contact' element={<Regions />} />
 
         {/* Example concepts covered in class, not needed in the portfolio */}
+        <Route path="/regions" element={<Regions/>} />
         <Route path='/country/:name' element={<SingleCountry />} />
         <Route path='*' element={<PageNotFound />} />
       </Routes>

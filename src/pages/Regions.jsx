@@ -3,6 +3,20 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import RegionCard from '../components/RegionCard';
 
+import AfricaImg from '../images/Africa.jpg';
+import AmericasImg from '../images/Americas.jpg';
+import AsiaImg from '../images/Asia.jpg';
+import EuropeImg from '../images/Europe.jpg';
+import OceaniaImg from '../images/Oceania.jpg';
+
+const regionImages = {
+    Africa: AfricaImg,
+    Americas: AmericasImg,
+    Asia: AsiaImg,
+    Europe: EuropeImg,
+    Oceania: OceaniaImg
+};
+
 export default function Regions(){
      const [regionsList, setRegionsList] = useState([]);
 
@@ -25,9 +39,23 @@ export default function Regions(){
             .catch(error => console.log(error));}, []);
     
     
-    
+            const regionCards = regionsList.map(region => (
+        <Link
+            key={region.regionName}
+            to={`/region/${region.regionName}`}
+            className="no-underline hover:shadow-lg transition-shadow duration-200">
+           
+            <RegionCard
+                regionName={region.regionName}
+                regionImg={region.regionImg}
+            />
+        </Link>
+    ));
     
     return(
-        <h1>Hello from Contact page</h1>
+         <div>
+            <h1>Regions</h1>
+            {regionCards}
+        </div>
     );
 }
