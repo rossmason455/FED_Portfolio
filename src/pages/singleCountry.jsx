@@ -31,6 +31,17 @@ export default function SingleCountry(){
             .catch((err) => console.log(`${label} error:`, err));
         };
                 
+         const indicators = [
+          { code: 'SP.POP.TOTL', setter: setPopulation, label: 'Population' },
+          { code: 'NY.GDP.MKTP.CD', setter: setGdp, label: 'GDP' },
+          { code: 'SP.DYN.CBRT.IN', setter: setBirthRate, label: 'Birth Rate' },
+          { code: 'SP.DYN.LE00.IN', setter: setLifeExpectancy, label: 'Life Expectancy' },
+        ];
+
+
+        indicators.forEach(({ code, setter, label }) =>
+          fetchIndicator(code, setter, label)
+        );
 
              })
              .catch(error => console.log(error));
