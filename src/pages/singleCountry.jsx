@@ -14,19 +14,23 @@ export default function SingleCountry(){
         axios.get(`https://restcountries.com/v3.1/name/${name}?fullText=true`)
              .then(response => {
                 console.log(response.data);
-                setCountry(response.data[0]);
-
+                const countryData = response.data[0];
+               setCountry(countryData);
 
 
                 const iso3 = countryData.cca3;
-
+                
                  const fetchIndicator = (indicator, setter, label) => {
           axios
             .get(`https://api.worldbank.org/v2/country/${iso3}/indicator/${indicator}?format=json`)
             .then((res) => {
               if (res.data[1]) {
-                setter(res.data[1][0].value);
+                const value = res.data[1].find(item => item.value !== null)?.value;
+                setter(value || null);
+                
               }
+
+              
             })
             .catch((err) => console.log(`${label} error:`, err));
         };
@@ -88,6 +92,13 @@ export default function SingleCountry(){
             <p><b>Capital(s):</b> {country.capital.join(', ')}</p>
             <h2>Currencies:</h2>
             {currencies}
+
+             <p><b>Population:</b> {population ? population.toLocaleString() : 'Not Available'}</p>
+            <p><b>GDP (USD):</b> {gdp ? gdp.toLocaleString() : 'Not Available'}</p>
+            <p><b>Birth Rate (per 1,000 people):</b> {birthRate ? birthRate.toFixed(2) : 'Not Available'}</p>
+            <p><b>Life Expectancy (years):</b> {lifeExpectancy ? lifeExpectancy.toFixed(1) : 'Not Available'}</p>
+
+
             <img src={country.coatOfArms.png} />
         </>
     );
