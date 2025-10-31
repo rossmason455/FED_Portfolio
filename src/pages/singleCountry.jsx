@@ -5,17 +5,51 @@ import axios from 'axios';
 export default function SingleCountry(){
     const { name } = useParams();
     const [country, setCountry] = useState(null);
-
+    
+    const [population, setPopulation] = useState(null);
+    const [gdp, setGdp] = useState(null);
+    const [birthRate, setBirthRate] = useState(null);
+    const [lifeExpectancy, setLifeExpectancy] = useState(null);
     useEffect(() => {
         axios.get(`https://restcountries.com/v3.1/name/${name}?fullText=true`)
              .then(response => {
                 console.log(response.data);
                 setCountry(response.data[0]);
 
+
+
+                const iso3 = countryData.cca3;
+
+                 const fetchIndicator = (indicator, setter, label) => {
+          axios
+            .get(`https://api.worldbank.org/v2/country/${iso3}/indicator/${indicator}?format=json`)
+            .then((res) => {
+              if (res.data[1]) {
+                setter(res.data[1][0].value);
+              }
+            })
+            .catch((err) => console.log(`${label} error:`, err));
+        };
+                
+
              })
              .catch(error => console.log(error));
     }, []);
 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
     if(country === null){
         return (
             <p>Loading...</p>
