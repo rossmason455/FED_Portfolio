@@ -31,7 +31,7 @@ export default function Subregions() {
       to={`/subregion/${subregion.subregionName}`}
       className="no-underline"
     >
-      <SubregionCard subregionName={subregion.subregionName} />
+      <SubRegionCard subregionName={subregion.subregionName} />
     </Link>
   ));
 

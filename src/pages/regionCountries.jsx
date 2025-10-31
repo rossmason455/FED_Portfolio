@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import CountryCard from "../components/CountryCard";
@@ -18,12 +18,23 @@ export default function RegionCountries() {
 
 
       const countryCards = countryList.map((country) => (
-    <CountryCard
-      key={country.cca3}
-      flagImg={country.flags.png}
-      name={country.name.common}
-      capital={country.capital}
-    />
+
+        <>
+              <Link 
+            key={country.cca3} 
+            to={`/country/${country.name.common}`} 
+            className="no-underline hover:shadow-lg transition-shadow duration-200"
+        >
+                <CountryCard 
+                    key={country.cca3}
+                    flagImg={country.flags.png}
+                    name={country.name.common}
+                    capital={country.capital}
+                />
+                </Link>
+
+                </>
+  
   ));
 
    return (

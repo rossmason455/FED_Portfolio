@@ -5,7 +5,9 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
 import Regions from './pages/Regions'
+import SubRegions from './pages/SubRegions'
 import RegionCountries from './pages/RegionCountries'
+import SubRegionCountries from './pages/SubRegionCountries'
 import PageNotFound from './pages/PageNotFound';
 import SingleCountry from './pages/SingleCountry';
 
@@ -17,13 +19,14 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/contact' element={<Regions />} />
+        <Route path='/subregions' element={<SubRegions />} />
+        <Route path='/regions' element={<Regions />} />
 
         {/* Example concepts covered in class, not needed in the portfolio */}
         
         <Route path="/regions" element={<Regions/>} />
         <Route path="/region/:regionName" element={<RegionCountries />} />
+        <Route path="/subregion/:subregionName" element={<SubRegionCountries />} />
         <Route path='/country/:name' element={<SingleCountry />} />
         <Route path='*' element={<PageNotFound />} />
       </Routes>

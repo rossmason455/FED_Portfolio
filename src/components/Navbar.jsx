@@ -4,8 +4,8 @@ export default function(){
     return (
         <div >
             <Link to='/'>Home</Link> | 
-            <Link to='about'>About</Link> |
-            <Link to='regions'>regions</Link>
+            <Link to='subregions'>Sub Regions</Link> |
+            <Link to='regions'>Regions</Link>
         </div>
     );
 }
