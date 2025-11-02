@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Regions from './pages/Regions'
 import SubRegions from './pages/SubRegions'
-import RegionCountries from './pages/regionCountries'
+import RegionCountries from './pages/RegionCountries'
 import SubRegionCountries from './pages/SubRegionCountries'
 import PageNotFound from './pages/PageNotFound';
 import SingleCountry from './pages/SingleCountry';
