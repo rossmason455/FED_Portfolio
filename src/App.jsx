@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Regions from './pages/Regions'
 import SubRegions from './pages/SubRegions'
-import RegionCountries from './pages/RegionCountries'
+import RegionCountries from './pages/regionCountries'
 import SubRegionCountries from './pages/SubRegionCountries'
 import PageNotFound from './pages/PageNotFound';
 import SingleCountry from './pages/SingleCountry';
@@ -15,6 +15,12 @@ import SingleCountry from './pages/SingleCountry';
 
 export default function App() {
   return (
+
+    <>
+
+      
+
+
     <Router>
       <Navbar />
       <Routes>
@@ -34,5 +40,7 @@ export default function App() {
       <Navbar />
 
     </Router>
+
+    </>
   );
 }
